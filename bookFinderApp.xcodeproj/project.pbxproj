@@ -22,6 +22,7 @@
 		D7A8837B2822B15A00FD480A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D7A8837A2822B15A00FD480A /* RxCocoa */; };
 		D7A8837D2822B15A00FD480A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D7A8837C2822B15A00FD480A /* RxRelay */; };
 		D7A8837F2822B15A00FD480A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D7A8837E2822B15A00FD480A /* RxSwift */; };
+		D7A883812822B87200FD480A /* BooksDTO+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A883802822B87200FD480A /* BooksDTO+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D7799DCF2821569800C589C1 /* APIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIType.swift; sourceTree = "<group>"; };
 		D7799DD1282156AF00C589C1 /* BooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksAPI.swift; sourceTree = "<group>"; };
 		D7A883772822B0EF00FD480A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		D7A883802822B87200FD480A /* BooksDTO+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BooksDTO+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				D7799DA028214DB200C589C1 /* SceneDelegate.swift */,
 				D7799DA228214DB200C589C1 /* ViewController.swift */,
 				D7799DCE2821564800C589C1 /* Network */,
+				D7A883822823843700FD480A /* Structures */,
 				D7799DA428214DB200C589C1 /* Main.storyboard */,
 				D7799DA728214DB300C589C1 /* Assets.xcassets */,
 				D7799DA928214DB300C589C1 /* LaunchScreen.storyboard */,
@@ -148,6 +151,14 @@
 				D7A883772822B0EF00FD480A /* SessionManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D7A883822823843700FD480A /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				D7A883802822B87200FD480A /* BooksDTO+.swift */,
+			);
+			path = Structures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7799DD02821569800C589C1 /* APIType.swift in Sources */,
+				D7A883812822B87200FD480A /* BooksDTO+.swift in Sources */,
 				D7799DD2282156AF00C589C1 /* BooksAPI.swift in Sources */,
 				D7A883782822B0EF00FD480A /* SessionManager.swift in Sources */,
 				D7799DA328214DB200C589C1 /* ViewController.swift in Sources */,
