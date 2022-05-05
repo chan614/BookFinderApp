@@ -28,8 +28,9 @@ extension BooksAPI {
         case let .list(term, offset, limit):
             return [
                 "q": term,
+                "startIndex": offset,
                 "maxResults": limit,
-                "startIndex": offset
+                "projection": "lite"
             ]
         }
     }
