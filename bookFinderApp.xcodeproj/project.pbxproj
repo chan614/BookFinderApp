@@ -23,6 +23,12 @@
 		D7A8837D2822B15A00FD480A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D7A8837C2822B15A00FD480A /* RxRelay */; };
 		D7A8837F2822B15A00FD480A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D7A8837E2822B15A00FD480A /* RxSwift */; };
 		D7A883812822B87200FD480A /* BooksDTO+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A883802822B87200FD480A /* BooksDTO+.swift */; };
+		D7A883842823859400FD480A /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A883832823859400FD480A /* BooksService.swift */; };
+		D7A8838F28254B3D00FD480A /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A8838D28254B3D00FD480A /* ListItemCell.swift */; };
+		D7A8839028254B3D00FD480A /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A8838E28254B3D00FD480A /* ListItemCell.xib */; };
+		D7A88393282550CB00FD480A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A88391282550CB00FD480A /* ListViewController.swift */; };
+		D7A88394282550CB00FD480A /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A88392282550CB00FD480A /* ListViewController.xib */; };
+		D7A88396282550FF00FD480A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A88395282550FF00FD480A /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,12 @@
 		D7799DD1282156AF00C589C1 /* BooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksAPI.swift; sourceTree = "<group>"; };
 		D7A883772822B0EF00FD480A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D7A883802822B87200FD480A /* BooksDTO+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BooksDTO+.swift"; sourceTree = "<group>"; };
+		D7A883832823859400FD480A /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
+		D7A8838D28254B3D00FD480A /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		D7A8838E28254B3D00FD480A /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
+		D7A88391282550CB00FD480A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D7A88392282550CB00FD480A /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		D7A88395282550FF00FD480A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D75B3A40282563C900EFCD9C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7A883982825512100FD480A /* ListViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D75B3A41282563D300EFCD9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D7A88395282550FF00FD480A /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D75B3A42282563DC00EFCD9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D7A883972825510900FD480A /* ListItemCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D75B3A43282563F400EFCD9C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D7A883832823859400FD480A /* BooksService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D7799D9228214DB200C589C1 = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +161,11 @@
 				D7799DA028214DB200C589C1 /* SceneDelegate.swift */,
 				D7799DA228214DB200C589C1 /* ViewController.swift */,
 				D7799DCE2821564800C589C1 /* Network */,
+				D75B3A43282563F400EFCD9C /* Services */,
 				D7A883822823843700FD480A /* Structures */,
+				D75B3A41282563D300EFCD9C /* ViewModels */,
+				D75B3A40282563C900EFCD9C /* ViewControllers */,
+				D75B3A42282563DC00EFCD9C /* Views */,
 				D7799DA428214DB200C589C1 /* Main.storyboard */,
 				D7799DA728214DB300C589C1 /* Assets.xcassets */,
 				D7799DA928214DB300C589C1 /* LaunchScreen.storyboard */,
@@ -159,6 +207,24 @@
 				D7A883802822B87200FD480A /* BooksDTO+.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		D7A883972825510900FD480A /* ListItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				D7A8838D28254B3D00FD480A /* ListItemCell.swift */,
+				D7A8838E28254B3D00FD480A /* ListItemCell.xib */,
+			);
+			path = ListItemCell;
+			sourceTree = "<group>";
+		};
+		D7A883982825512100FD480A /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D7A88391282550CB00FD480A /* ListViewController.swift */,
+				D7A88392282550CB00FD480A /* ListViewController.xib */,
+			);
+			path = ListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +340,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7799DAB28214DB300C589C1 /* LaunchScreen.storyboard in Resources */,
+				D7A8839028254B3D00FD480A /* ListItemCell.xib in Resources */,
+				D7A88394282550CB00FD480A /* ListViewController.xib in Resources */,
 				D7799DA828214DB300C589C1 /* Assets.xcassets in Resources */,
 				D7799DA628214DB200C589C1 /* Main.storyboard in Resources */,
 			);
@@ -304,9 +372,13 @@
 				D7A883812822B87200FD480A /* BooksDTO+.swift in Sources */,
 				D7799DD2282156AF00C589C1 /* BooksAPI.swift in Sources */,
 				D7A883782822B0EF00FD480A /* SessionManager.swift in Sources */,
+				D7A8838F28254B3D00FD480A /* ListItemCell.swift in Sources */,
+				D7A883842823859400FD480A /* BooksService.swift in Sources */,
 				D7799DA328214DB200C589C1 /* ViewController.swift in Sources */,
 				D7799D9F28214DB200C589C1 /* AppDelegate.swift in Sources */,
+				D7A88393282550CB00FD480A /* ListViewController.swift in Sources */,
 				D7799DA128214DB200C589C1 /* SceneDelegate.swift in Sources */,
+				D7A88396282550FF00FD480A /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
