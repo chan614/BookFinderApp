@@ -1,5 +1,5 @@
 //
-//  ListItemCell.swift
+//  SearchedItemCell.swift
 //  bookFinderApp
 //
 //  Created by 박지찬 on 2022/05/06.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ListItemCell: UITableViewCell {
-    static let reuseID = "ListItemCell"
+class SearchedItemCell: UITableViewCell {
+    static let reuseID = "SearchedItemCell"
     
     @IBOutlet private weak var thumbnailView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!

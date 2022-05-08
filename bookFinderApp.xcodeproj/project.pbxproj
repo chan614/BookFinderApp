@@ -24,8 +24,8 @@
 		D7A8837F2822B15A00FD480A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D7A8837E2822B15A00FD480A /* RxSwift */; };
 		D7A883812822B87200FD480A /* BooksDTO+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A883802822B87200FD480A /* BooksDTO+.swift */; };
 		D7A883842823859400FD480A /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A883832823859400FD480A /* BooksService.swift */; };
-		D7A8838F28254B3D00FD480A /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A8838D28254B3D00FD480A /* ListItemCell.swift */; };
-		D7A8839028254B3D00FD480A /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A8838E28254B3D00FD480A /* ListItemCell.xib */; };
+		D7A8838F28254B3D00FD480A /* SearchedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A8838D28254B3D00FD480A /* SearchedItemCell.swift */; };
+		D7A8839028254B3D00FD480A /* SearchedItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A8838E28254B3D00FD480A /* SearchedItemCell.xib */; };
 		D7A88393282550CB00FD480A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A88391282550CB00FD480A /* SearchViewController.swift */; };
 		D7A88394282550CB00FD480A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A88392282550CB00FD480A /* SearchViewController.xib */; };
 		D7A88396282550FF00FD480A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A88395282550FF00FD480A /* SearchViewModel.swift */; };
@@ -67,8 +67,8 @@
 		D7A883772822B0EF00FD480A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D7A883802822B87200FD480A /* BooksDTO+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BooksDTO+.swift"; sourceTree = "<group>"; };
 		D7A883832823859400FD480A /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
-		D7A8838D28254B3D00FD480A /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
-		D7A8838E28254B3D00FD480A /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
+		D7A8838D28254B3D00FD480A /* SearchedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedItemCell.swift; sourceTree = "<group>"; };
+		D7A8838E28254B3D00FD480A /* SearchedItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchedItemCell.xib; sourceTree = "<group>"; };
 		D7A88391282550CB00FD480A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D7A88392282550CB00FD480A /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		D7A88395282550FF00FD480A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		D75B3A40282563C900EFCD9C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D7A883982825512100FD480A /* ListViewController */,
+				D7A883982825512100FD480A /* SearchViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 		D7A883972825510900FD480A /* ListItemCell */ = {
 			isa = PBXGroup;
 			children = (
-				D7A8838D28254B3D00FD480A /* ListItemCell.swift */,
-				D7A8838E28254B3D00FD480A /* ListItemCell.xib */,
+				D7A8838D28254B3D00FD480A /* SearchedItemCell.swift */,
+				D7A8838E28254B3D00FD480A /* SearchedItemCell.xib */,
 			);
 			path = ListItemCell;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7799DAB28214DB300C589C1 /* LaunchScreen.storyboard in Resources */,
-				D7A8839028254B3D00FD480A /* ListItemCell.xib in Resources */,
+				D7A8839028254B3D00FD480A /* SearchedItemCell.xib in Resources */,
 				D7A88394282550CB00FD480A /* SearchViewController.xib in Resources */,
 				D7799DA828214DB300C589C1 /* Assets.xcassets in Resources */,
 				D7799DA628214DB200C589C1 /* Main.storyboard in Resources */,
@@ -372,7 +372,7 @@
 				D7A883812822B87200FD480A /* BooksDTO+.swift in Sources */,
 				D7799DD2282156AF00C589C1 /* BooksAPI.swift in Sources */,
 				D7A883782822B0EF00FD480A /* SessionManager.swift in Sources */,
-				D7A8838F28254B3D00FD480A /* ListItemCell.swift in Sources */,
+				D7A8838F28254B3D00FD480A /* SearchedItemCell.swift in Sources */,
 				D7A883842823859400FD480A /* BooksService.swift in Sources */,
 				D7799DA328214DB200C589C1 /* ViewController.swift in Sources */,
 				D7799D9F28214DB200C589C1 /* AppDelegate.swift in Sources */,
