@@ -14,6 +14,7 @@ protocol BooksServiceable {
 
 class BooksService: BooksServiceable {
     func loadList(term: String, offset: Int, limit: Int) -> Single<BooksDTO> {
-        return .never()
+        let apiType = BooksAPI.list(term: term, offset: offset, limit: limit)
+        return SessionManager.shared.request(apiType: apiType)
     }
 }

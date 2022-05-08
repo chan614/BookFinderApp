@@ -26,4 +26,9 @@ class SearchedItemCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(item: BookListItem) {
+        titleLabel.text = item.title
+        authorLabel.text = item.author
+        dateLabel.text = item.date
+    }
 }

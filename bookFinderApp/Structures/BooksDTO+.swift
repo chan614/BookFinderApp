@@ -10,10 +10,10 @@ import Foundation
 struct BooksDTO: Codable {
     let kind: String
     let totalItems: Int
-    let items: [Item]
+    let items: [BookItem]
 }
 
-struct Item: Codable {
+struct BookItem: Codable {
     let id: String
     let kind: String
     let etag: String
