@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
              
         self.window = window
         
-        self.window?.rootViewController = ListViewController(nibName: "ListViewController", bundle: nil)
+        let rootVC = SearchViewController(viewModel: .init())
+        self.window?.rootViewController = UINavigationController(rootViewController: rootVC)
         self.window?.makeKeyAndVisible()
     }
 
