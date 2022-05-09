@@ -35,6 +35,10 @@ class PagingDataSource<Source> {
     private let loadedDistance: Int
     private let scheduler = SerialDispatchQueueScheduler(qos: .userInitiated)
     
+    private let totalCountRelay = PublishRelay<Int>()
+    var totalCountObservable: Observable<Int> {
+        totalCountRelay.asObservable()
+    }
     private let loadingStateRelay = PublishRelay<PagingLoadingState>()
     var loadingStateObservable: Observable<PagingLoadingState> {
         loadingStateRelay.asObservable()
@@ -112,6 +116,8 @@ class PagingDataSource<Source> {
         self.onStart()
         
         let queryOffset = self.queryOffset.current(reset: isRefresh)
+        
+        totalCountRelay.accept(queryOffset.total)
         
         if !queryOffset.isMoreAvailable {
             self.onError()

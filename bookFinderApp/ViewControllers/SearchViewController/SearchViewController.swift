@@ -16,6 +16,12 @@ class SearchViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let viewModel: SearchViewModel
     private let searchController = UISearchController()
+    private let headerView: SearchedListHeaderView = {
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
+        let view = SearchedListHeaderView(frame: frame)
+        
+        return view
+    }()
     
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
@@ -37,8 +43,11 @@ class SearchViewController: UIViewController {
     private func setUp() {
         navigationItem.title = "Search"
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = true
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.hidesNavigationBarDuringPresentation = true
+        
         
         let cellNib = UINib(nibName: SearchedItemCell.reuseID, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: SearchedItemCell.reuseID)
@@ -49,6 +58,8 @@ class SearchViewController: UIViewController {
         indicatorView.startAnimating()
         tableView.tableFooterView = indicatorView
         tableView.tableFooterView?.isHidden = true
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+//        tableView.tableHeaderView = headerView
     }
     
     private func subscribeUI() {
@@ -71,9 +82,6 @@ class SearchViewController: UIViewController {
     
     private func bind() {
         viewModel.listObservable(event: tableView.rx.willDisplayCell)
-            // .pagingDataSource
-            // .dataSource(tableView.rx.willDisplayCell)
-            .debug()
             .observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items(
                 cellIdentifier: SearchedItemCell.reuseID,
@@ -88,6 +96,21 @@ class SearchViewController: UIViewController {
                 .bind(to: tableFooterViewIsHidden)
                 .disposed(by: disposeBag)
         }
+        
+        viewModel.totalCountObservable
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self, onNext: { owner, count in
+                owner.headerView.configure(totalCount: count)
+            })
+            .disposed(by: disposeBag)
     }
+}
 
+extension SearchViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
+        return headerView
+    }
 }

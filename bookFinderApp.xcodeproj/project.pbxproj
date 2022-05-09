@@ -11,6 +11,8 @@
 		D75B3A452827C90A00EFCD9C /* BookListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B3A442827C90A00EFCD9C /* BookListItem.swift */; };
 		D75B3A492827D78B00EFCD9C /* PagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B3A482827D78B00EFCD9C /* PagingDataSource.swift */; };
 		D75B3A4B2827E8D200EFCD9C /* BooksPagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B3A4A2827E8D200EFCD9C /* BooksPagingDataSource.swift */; };
+		D7638FA12829258C008553FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D7638FA02829258C008553FE /* Kingfisher */; };
+		D7638FA628293C05008553FE /* SearchedListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7638FA528293C05008553FE /* SearchedListHeaderView.swift */; };
 		D7799D9F28214DB200C589C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7799D9E28214DB200C589C1 /* AppDelegate.swift */; };
 		D7799DA128214DB200C589C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7799DA028214DB200C589C1 /* SceneDelegate.swift */; };
 		D7799DA328214DB200C589C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7799DA228214DB200C589C1 /* ViewController.swift */; };
@@ -57,6 +59,7 @@
 		D75B3A442827C90A00EFCD9C /* BookListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListItem.swift; sourceTree = "<group>"; };
 		D75B3A482827D78B00EFCD9C /* PagingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingDataSource.swift; sourceTree = "<group>"; };
 		D75B3A4A2827E8D200EFCD9C /* BooksPagingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksPagingDataSource.swift; sourceTree = "<group>"; };
+		D7638FA528293C05008553FE /* SearchedListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedListHeaderView.swift; sourceTree = "<group>"; };
 		D7799D9B28214DB200C589C1 /* bookFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7799D9E28214DB200C589C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7799DA028214DB200C589C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7638FA12829258C008553FE /* Kingfisher in Frameworks */,
 				D7A8837F2822B15A00FD480A /* RxSwift in Frameworks */,
 				D7A8837D2822B15A00FD480A /* RxRelay in Frameworks */,
 				D7A8837B2822B15A00FD480A /* RxCocoa in Frameworks */,
@@ -138,7 +142,8 @@
 		D75B3A42282563DC00EFCD9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D7A883972825510900FD480A /* ListItemCell */,
+				D7638FA228293AE4008553FE /* SearchedListHeaderView */,
+				D7A883972825510900FD480A /* SearchedItemCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +154,14 @@
 				D7A883832823859400FD480A /* BooksService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D7638FA228293AE4008553FE /* SearchedListHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				D7638FA528293C05008553FE /* SearchedListHeaderView.swift */,
+			);
+			path = SearchedListHeaderView;
 			sourceTree = "<group>";
 		};
 		D7799D9228214DB200C589C1 = {
@@ -229,13 +242,13 @@
 			path = Structures;
 			sourceTree = "<group>";
 		};
-		D7A883972825510900FD480A /* ListItemCell */ = {
+		D7A883972825510900FD480A /* SearchedItemCell */ = {
 			isa = PBXGroup;
 			children = (
 				D7A8838D28254B3D00FD480A /* SearchedItemCell.swift */,
 				D7A8838E28254B3D00FD480A /* SearchedItemCell.xib */,
 			);
-			path = ListItemCell;
+			path = SearchedItemCell;
 			sourceTree = "<group>";
 		};
 		D7A883982825512100FD480A /* SearchViewController */ = {
@@ -267,6 +280,7 @@
 				D7A8837A2822B15A00FD480A /* RxCocoa */,
 				D7A8837C2822B15A00FD480A /* RxRelay */,
 				D7A8837E2822B15A00FD480A /* RxSwift */,
+				D7638FA02829258C008553FE /* Kingfisher */,
 			);
 			productName = bookFinderApp;
 			productReference = D7799D9B28214DB200C589C1 /* bookFinderApp.app */;
@@ -342,6 +356,7 @@
 			mainGroup = D7799D9228214DB200C589C1;
 			packageReferences = (
 				D7A883792822B15A00FD480A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				D7638F9F2829258C008553FE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = D7799D9C28214DB200C589C1 /* Products */;
 			projectDirPath = "";
@@ -394,6 +409,7 @@
 				D7A883782822B0EF00FD480A /* SessionManager.swift in Sources */,
 				D7A8838F28254B3D00FD480A /* SearchedItemCell.swift in Sources */,
 				D7A883842823859400FD480A /* BooksService.swift in Sources */,
+				D7638FA628293C05008553FE /* SearchedListHeaderView.swift in Sources */,
 				0AB679522828E60D00EE7E10 /* QueryOffset.swift in Sources */,
 				D75B3A492827D78B00EFCD9C /* PagingDataSource.swift in Sources */,
 				D75B3A4B2827E8D200EFCD9C /* BooksPagingDataSource.swift in Sources */,
@@ -742,6 +758,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D7638F9F2829258C008553FE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		D7A883792822B15A00FD480A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -753,6 +777,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D7638FA02829258C008553FE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7638F9F2829258C008553FE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		D7A8837A2822B15A00FD480A /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D7A883792822B15A00FD480A /* XCRemoteSwiftPackageReference "RxSwift" */;

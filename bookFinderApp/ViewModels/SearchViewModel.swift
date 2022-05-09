@@ -13,6 +13,10 @@ import RxCocoa
 class SearchViewModel {
     private let pagingDataSource = BooksPagingDataSource(pagingSize: 30, loadedDistance: 20)
     
+    var totalCountObservable: Observable<Int> {
+        pagingDataSource.totalCountObservable
+    }
+    
     var loadingHiddenObservable: Observable<Bool> {
         pagingDataSource
             .loadingStateObservable

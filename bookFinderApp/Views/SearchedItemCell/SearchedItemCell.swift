@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchedItemCell: UITableViewCell {
     static let reuseID = "SearchedItemCell"
@@ -30,5 +31,14 @@ class SearchedItemCell: UITableViewCell {
         titleLabel.text = item.title
         authorLabel.text = item.author
         dateLabel.text = item.date
+        if let thumbnailURL = item.thumbnailURL {
+            thumbnailView.kf.setImage(
+                with: thumbnailURL,
+                placeholder: nil,
+                options: .none,
+                completionHandler: nil)
+        } else {
+            thumbnailView.image = nil
+        }
     }
 }
