@@ -8,12 +8,22 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
 
 class SearchViewModel {
-    let pagingDataSource = BooksPagingDataSource(pagingSize: 30, loadedDistance: 20)
+    private let pagingDataSource = BooksPagingDataSource(pagingSize: 30, loadedDistance: 20)
+    
+    var loadingHiddenObservable: Observable<Bool> {
+        pagingDataSource
+            .loadingStateObservable
+            .map { $0 != .loading }
+    }
     
     func search(term: String) {
         pagingDataSource.search(term: term)
-        
+    }
+    
+    func listObservable(event: ControlEvent<WillDisplayCellEvent>) -> Observable<[BookListItem]> {
+        pagingDataSource.dataSource(event)
     }
 }

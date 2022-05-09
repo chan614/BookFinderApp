@@ -35,7 +35,6 @@ class SearchViewController: UIViewController {
     }
 
     private func setUp() {
-        
         navigationItem.title = "Search"
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
@@ -52,7 +51,7 @@ class SearchViewController: UIViewController {
         tableView.tableFooterView?.isHidden = true
     }
     
-    func subscribeUI() {
+    private func subscribeUI() {
         searchController.searchBar.rx.text
             .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
             .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
@@ -63,14 +62,17 @@ class SearchViewController: UIViewController {
             
         tableView.rx.modelSelected(BookListItem.self)
             .subscribe(with: self, onNext: { owner, item in
-                UIApplication.shared.open(item.infoURL, options: [:])
+                if let infoURL = item.infoURL {
+                    UIApplication.shared.open(infoURL, options: [:])
+                }
             })
             .disposed(by: disposeBag)
     }
     
-    func bind() {
-        viewModel.pagingDataSource
-            .dataSource(tableView.rx.willDisplayCell)
+    private func bind() {
+        viewModel.listObservable(event: tableView.rx.willDisplayCell)
+            // .pagingDataSource
+            // .dataSource(tableView.rx.willDisplayCell)
             .debug()
             .observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items(
@@ -80,6 +82,12 @@ class SearchViewController: UIViewController {
                 cell.configure(item: element)
             }
             .disposed(by: disposeBag)
+        
+        if let tableFooterViewIsHidden = tableView.tableFooterView?.rx.isHidden {
+            viewModel.loadingHiddenObservable
+                .bind(to: tableFooterViewIsHidden)
+                .disposed(by: disposeBag)
+        }
     }
 
 }

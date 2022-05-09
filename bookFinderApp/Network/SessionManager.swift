@@ -29,14 +29,14 @@ final class SessionManager {
         
         return .create { [weak self] single in
             
-            self?.session.dataTask(with: url) { data, response, error in
+            self?.session.dataTask(with: url) { data, response, err in
                 do {
                     let successRange = 200..<300
                     
                     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1
                     
-                    if !successRange.contains(statusCode), let error = error {
-                        throw error
+                    if !successRange.contains(statusCode), let err = err {
+                        throw err
                     }
                     
                     guard let data = data else {
@@ -48,6 +48,7 @@ final class SessionManager {
                     single(.success(model))
                     
                 } catch {
+                    print(error)
                     single(.failure(error))
                 }
             }.resume()

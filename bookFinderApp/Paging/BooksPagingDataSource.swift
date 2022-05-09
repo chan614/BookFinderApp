@@ -22,6 +22,12 @@ class BooksPagingDataSource: PagingDataSource<BookListItem> {
         limit: Int
     ) -> Single<PagingData<BookListItem>> {
         
+        if term.isEmpty {
+            return .just(.init(
+                queryOffset: .init(offset: .zero, limit: limit, total: .zero),
+                items: []))
+        }
+        
         return service
             .loadList(term: term, offset: offset, limit: limit)
             .map { [weak self] in
@@ -34,7 +40,7 @@ class BooksPagingDataSource: PagingDataSource<BookListItem> {
     private func toBookListItems(from bookItems: [BookItem]) -> [BookListItem] {
         bookItems.map {
             var author = String()
-            for authorStr in $0.volumeInfo.authors {
+            for authorStr in $0.volumeInfo.authors ?? [] {
                 if !authorStr.isEmpty {
                     author = authorStr
                     break
@@ -42,11 +48,11 @@ class BooksPagingDataSource: PagingDataSource<BookListItem> {
             }
             
             return .init(
-                title: $0.volumeInfo.title,
+                title: $0.volumeInfo.title ?? String(),
                 author: author,
-                date: $0.volumeInfo.publishedDate,
-                thumbnailURL: URL(string: $0.volumeInfo.imageLinks.thumbnail)!,
-                infoURL: URL(string: $0.volumeInfo.infoLink)!)
+                date: $0.volumeInfo.publishedDate ?? String(),
+                thumbnailURL: URL(string: $0.volumeInfo.imageLinks?.thumbnail ?? String()),
+                infoURL: URL(string: $0.volumeInfo.infoLink))
         }
     }
     

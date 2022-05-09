@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB679522828E60D00EE7E10 /* QueryOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB679512828E60D00EE7E10 /* QueryOffset.swift */; };
 		D75B3A452827C90A00EFCD9C /* BookListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B3A442827C90A00EFCD9C /* BookListItem.swift */; };
 		D75B3A492827D78B00EFCD9C /* PagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B3A482827D78B00EFCD9C /* PagingDataSource.swift */; };
 		D75B3A4B2827E8D200EFCD9C /* BooksPagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B3A4A2827E8D200EFCD9C /* BooksPagingDataSource.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AB679512828E60D00EE7E10 /* QueryOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryOffset.swift; sourceTree = "<group>"; };
 		D75B3A442827C90A00EFCD9C /* BookListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListItem.swift; sourceTree = "<group>"; };
 		D75B3A482827D78B00EFCD9C /* PagingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingDataSource.swift; sourceTree = "<group>"; };
 		D75B3A4A2827E8D200EFCD9C /* BooksPagingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksPagingDataSource.swift; sourceTree = "<group>"; };
@@ -108,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AB679502828D32200EE7E10 /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				D75B3A482827D78B00EFCD9C /* PagingDataSource.swift */,
+				D75B3A4A2827E8D200EFCD9C /* BooksPagingDataSource.swift */,
+			);
+			path = Paging;
+			sourceTree = "<group>";
+		};
 		D75B3A40282563C900EFCD9C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,15 +176,14 @@
 			children = (
 				D7799D9E28214DB200C589C1 /* AppDelegate.swift */,
 				D7799DA028214DB200C589C1 /* SceneDelegate.swift */,
-				D7799DA228214DB200C589C1 /* ViewController.swift */,
-				D75B3A482827D78B00EFCD9C /* PagingDataSource.swift */,
-				D75B3A4A2827E8D200EFCD9C /* BooksPagingDataSource.swift */,
+				0AB679502828D32200EE7E10 /* Paging */,
 				D7799DCE2821564800C589C1 /* Network */,
 				D75B3A43282563F400EFCD9C /* Services */,
 				D7A883822823843700FD480A /* Structures */,
 				D75B3A41282563D300EFCD9C /* ViewModels */,
 				D75B3A40282563C900EFCD9C /* ViewControllers */,
 				D75B3A42282563DC00EFCD9C /* Views */,
+				D7799DA228214DB200C589C1 /* ViewController.swift */,
 				D7799DA428214DB200C589C1 /* Main.storyboard */,
 				D7799DA728214DB300C589C1 /* Assets.xcassets */,
 				D7799DA928214DB300C589C1 /* LaunchScreen.storyboard */,
@@ -214,6 +224,7 @@
 			children = (
 				D7A883802822B87200FD480A /* BooksDTO+.swift */,
 				D75B3A442827C90A00EFCD9C /* BookListItem.swift */,
+				0AB679512828E60D00EE7E10 /* QueryOffset.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 				D7A883782822B0EF00FD480A /* SessionManager.swift in Sources */,
 				D7A8838F28254B3D00FD480A /* SearchedItemCell.swift in Sources */,
 				D7A883842823859400FD480A /* BooksService.swift in Sources */,
+				0AB679522828E60D00EE7E10 /* QueryOffset.swift in Sources */,
 				D75B3A492827D78B00EFCD9C /* PagingDataSource.swift in Sources */,
 				D75B3A4B2827E8D200EFCD9C /* BooksPagingDataSource.swift in Sources */,
 				D7799DA328214DB200C589C1 /* ViewController.swift in Sources */,
