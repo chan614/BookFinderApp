@@ -24,13 +24,8 @@ struct VolumeInfo: Codable {
     let title: String?
     let authors: [String]?
     let publishedDate: String?
-    let maturityRating: String
-    let allowAnonLogging: Bool
-    let contentVersion: String
     let imageLinks: ImageLinks?
-    let previewLink: String
     let infoLink: String
-    let canonicalVolumeLink: String
 }
 
 struct ImageLinks: Codable {
