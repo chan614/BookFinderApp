@@ -23,7 +23,7 @@ class SearchedListHeaderView: UIView {
         
     }
     
-    func setUp() {
+    private func setUp() {
         addSubview(titleView)
         
         titleView.translatesAutoresizingMaskIntoConstraints = false

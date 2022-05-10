@@ -18,27 +18,12 @@ class SearchedItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configure(item: BookListItem) {
         titleLabel.text = item.title
         authorLabel.text = item.author
         dateLabel.text = item.date
-        if let thumbnailURL = item.thumbnailURL {
-            thumbnailView.kf.setImage(
-                with: thumbnailURL,
-                placeholder: nil,
-                options: .none,
-                completionHandler: nil)
-        } else {
-            thumbnailView.image = nil
-        }
+        thumbnailView.kf.setImage(with: item.thumbnailURL)
     }
 }

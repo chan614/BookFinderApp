@@ -26,6 +26,7 @@ class PagingDataSource<Source> {
     private var inProgress = false
     private var currentPosition = 0
     private var queryOffset: QueryOffset
+    
     private var dataList = [Source]() {
         didSet { dataRealy.accept(dataList) }
     }

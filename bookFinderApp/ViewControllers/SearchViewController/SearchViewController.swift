@@ -59,7 +59,6 @@ class SearchViewController: UIViewController {
         tableView.tableFooterView = indicatorView
         tableView.tableFooterView?.isHidden = true
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
-//        tableView.tableHeaderView = headerView
     }
     
     private func subscribeUI() {
